@@ -1,0 +1,43 @@
+.main {
+  background-color: var(--beige);
+  margin-top: -5.6rem;
+  padding: 8rem 1.25rem 2.5rem;
+}
+
+.mainContent {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.mainTitle {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--brown);
+}
+
+.mainContent div > p {
+  margin: 0.5rem 0 1.6rem;
+  font-size: 1.3rem;
+  max-width: 45ch;
+}
+
+@media screen and (max-width: 1000px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+  .mainContent figure {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .mainTitle {
+    font-size: 2.3rem;
+  }
+  .mainContent div > p {
+    font-size: 1rem;
+  }
+}
