@@ -40,27 +40,15 @@ img {
   margin-top: 5.6rem;
 }
 
+.title {
+  color: var(--brown);
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
 .paragraph {
   font-size: 1.1rem;
   color: var(--black);
   line-height: 1.4;
-}
-
-.button {
-  font-size: 1.3rem;
-  cursor: pointer;
-  padding: 1.2rem 2.4rem;
-  background-color: var(--yellow);
-  color: var(--brown);
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  border-radius: 1rem;
-  display: inline-block;
-  min-width: 13rem;
-  transition: 0.1s;
-}
-
-.button:hover {
-  background-color: var(--yellow-2);
 }

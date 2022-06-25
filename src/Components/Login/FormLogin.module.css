@@ -1,0 +1,27 @@
+.formLogin {
+  padding: 4rem;
+}
+
+.formLogin form > button {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .formLogin {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1.25rem;
+  }
+}
+
+.lostPass {
+  display: block;
+  margin: 2rem 0;
+  color: var(--brown);
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.lostPass:hover {
+  color: var(--light-brown);
+}

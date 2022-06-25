@@ -1,9 +1,12 @@
 import React from 'react';
 import petMain from '../Assets/main-pet.png';
 import styles from './Main.module.css';
-import { Link } from 'react-router-dom';
+import Button from './FormComponents/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
+  const navigate = useNavigate();
+
   return (
     <main className={styles.main}>
       <div className={`${styles.mainContent} container`}>
@@ -13,9 +16,7 @@ const Main = () => {
             Faça um cadastro e poste seu pet para que alguém o encontre na sua
             região rapidamente.
           </p>
-          <Link to="login" className="button">
-            Cadastrar
-          </Link>
+          <Button onClick={() => navigate('login/cadastro')}>Cadastrar</Button>
         </div>
         <figure>
           <img src={petMain} alt="Um cachorro e um gato juntos" />

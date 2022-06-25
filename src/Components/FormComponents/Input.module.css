@@ -1,0 +1,53 @@
+.inputContent {
+  position: relative;
+  padding-top: 13px;
+  max-width: 30rem;
+}
+
+.input {
+  display: block;
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  border-radius: 0.7rem;
+  padding: 1.25rem;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.1s linear;
+  -webkit-appearance:none;
+  margin-bottom: 0.6rem;
+}
+
+.input:focus,
+.input:hover,
+.input:not(:placeholder-shown) {
+  background-color: var(--white);
+}
+
+.input:-webkit-autofill {
+  font-size: 1rem;
+  -webkit-box-shadow: 0 0 0 300px var(--white) inset;
+}
+
+.label {
+  pointer-events: none;
+  position: absolute;
+  top: 40%;
+  border-radius: 0.7rem;
+  left: 1rem;
+  transition: all 0.1s linear;
+  padding: 0.2rem;
+  color: var(--light-brown);
+}
+
+.input:focus + .label, .input:not(:placeholder-shown) + .label { 
+  top: 0;
+  background-color: var(--white);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  .inputContent {
+    max-width: 100%;
+  }
+}

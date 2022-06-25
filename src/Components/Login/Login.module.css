@@ -1,0 +1,22 @@
+.login {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  height: 100vh;
+}
+
+.login::before {
+  content: '';
+  margin-top: -5.6rem;
+  background: url('../../Assets/login-pet.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 800px) {
+  .login {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .login::before {
+    display: none;
+  }
+} 
