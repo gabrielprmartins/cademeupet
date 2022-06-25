@@ -18,7 +18,7 @@ const FormLogin = () => {
       <Link to="esqueceu" className={styles.lostPass}>
         Esqueceu sua senha?
       </Link>
-      <h1 class="title">Faça seu cadastro</h1>
+      <h1 className="title">Faça seu cadastro</h1>
       <Button onClick={() => navigate('cadastro')}>Cadastre-se</Button>
     </section>
   );

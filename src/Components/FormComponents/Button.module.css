@@ -11,8 +11,10 @@
   display: inline-block;
   min-width: 13rem;
   transition: 0.1s;
+  outline: none;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--yellow-2);
 }
