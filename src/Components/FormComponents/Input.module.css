@@ -40,6 +40,10 @@
   color: var(--light-brown);
 }
 
+.error {
+  color: var(--red);
+}
+
 .input:focus + .label, .input:not(:placeholder-shown) + .label { 
   top: 0;
   background-color: var(--white);
