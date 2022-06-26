@@ -1,4 +1,4 @@
-export const API_URL = 'https://cademeupetapi.000webhostapp.com/json';
+export const API_URL = 'http://cademeupetapi.online/json';
 
 export function TOKEN_POST(body) {
   return {

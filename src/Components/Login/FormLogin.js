@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TOKEN_POST } from '../../api';
+import useFetch from '../../Hooks/useFetch';
 import useForm from '../../Hooks/useForm';
 import Button from '../FormComponents/Button';
 import Input from '../FormComponents/Input';
@@ -11,27 +12,17 @@ const FormLogin = () => {
   const username = useForm('email');
   const password = useForm('');
 
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  const { request } = useFetch();
 
   async function handleSubmit(event) {
     event.preventDefault();
-    try {
-      setLoading(true);
-      const { url, options } = TOKEN_POST({
-        username: username.value,
-        password: password.value,
-      });
-      const response = await fetch(url, options);
-      console.log(response);
-      const json = await response.json();
-      console.log(json);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
+    const { url, options } = TOKEN_POST({
+      username: username.value,
+      password: password.value,
+    });
+    const { response, json } = await request(url, options);
+    console.log(response);
+    console.log(json);
   }
 
   return (
