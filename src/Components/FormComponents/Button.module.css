@@ -8,13 +8,48 @@
   text-align: center;
   border: none;
   border-radius: 0.7rem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 13rem;
   transition: 0.1s;
   outline: none;
+  position: relative;
 }
 
 .button:hover,
 .button:focus {
   background-color: var(--yellow-2);
+}
+
+.button:disabled {
+  cursor: wait;
+  background-color: #fea;
+  color: var(--light-brown);
+}
+
+.button::after {
+  content: '';
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 7px solid var(--brown);
+  border-right-color: transparent;
+  position: absolute;
+  z-index: 12;
+  top: -5px;
+  left: -5px;
+  animation: loading 1s infinite;
+}
+
+.button:disabled::after {
+  opacity: 1;
+  display: block;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
 }
