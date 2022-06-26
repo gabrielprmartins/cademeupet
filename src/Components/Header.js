@@ -5,10 +5,7 @@ import { UserContext } from '../UserContext';
 import styles from './Header.module.css';
 
 const Header = () => {
-  const { data, login, userLogout } = React.useContext(UserContext);
-
-  console.log(data);
-  console.log(login);
+  const { data, login } = React.useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -17,12 +14,9 @@ const Header = () => {
           <Logo />
         </Link>
         {login ? (
-          <>
-            <Link to="conta" className={styles.link}>
-              {data.display_name.split(' ', 1)}
-            </Link>
-            <button onClick={userLogout}>Sair</button>
-          </>
+          <Link to="conta" className={styles.link}>
+            {data.display_name.split(' ', 1)}
+          </Link>
         ) : (
           <Link to="login" className={styles.link}>
             login/cadastro
