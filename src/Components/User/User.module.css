@@ -1,5 +1,7 @@
 .user {
   margin-top: 8rem;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
+  justify-content: center;
+  gap: 3rem;
 }

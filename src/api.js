@@ -49,3 +49,28 @@ export function USER_GET(token) {
     },
   };
 }
+
+export function PET_POST(formData, token) {
+  return {
+    url: API_URL + '/api/pet',
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+      body: formData,
+    },
+  };
+}
+
+export function UFS_GET() {
+  return {
+    url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/',
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}

@@ -1,0 +1,47 @@
+.find {
+  margin-top: -13px;
+}
+
+.selects {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inputFile {
+  display: none;
+}
+
+.labelFile {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #EEEE;
+  border: 1px solid #CCC;
+  box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--light-brown);
+  margin: 1rem 0 2rem;
+  transition: 0.2s;
+}
+
+.labelFile:hover,
+.labelFile:focus {
+  box-shadow: 4px 8px 20px -2px rgba(0, 0, 0, 0.20);
+}
+
+.preview {
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center center;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+}
+
+.preview::after {
+  content: '';
+  display: block;
+  height: 0;
+  padding-bottom: 100%;
+}

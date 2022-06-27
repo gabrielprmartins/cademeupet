@@ -1,0 +1,30 @@
+.select {
+  text-overflow: "";
+  display: block;
+  background: url('../../Assets/arrow-select.svg') no-repeat 85% center, #EEE;
+  border: 1px solid #CCC;
+  border-radius: 0.7rem;
+  padding: 1.25rem;
+  width: 9.3rem;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.1s linear;
+  -webkit-appearance:none;
+  cursor: pointer;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+.select:focus,
+.select:hover,
+.select:active,
+.select.active {
+  background-color: var(--white);
+}
+
+.select option {
+  background-color: var(--white);
+  cursor: pointer;
+}

@@ -16,6 +16,7 @@
   transition: all 0.1s linear;
   -webkit-appearance:none;
   margin-bottom: 0.6rem;
+  resize: none;
 }
 
 .input:focus,
