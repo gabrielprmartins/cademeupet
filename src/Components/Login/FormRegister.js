@@ -4,37 +4,30 @@ import Button from '../FormComponents/Button';
 import styles from './FormLogin.module.css';
 import useForm from '../../Hooks/useForm';
 import { USER_POST } from '../../api';
+import useFetch from '../../Hooks/useFetch';
+import { UserContext } from '../../UserContext';
+import Error from '../Error';
 
 const FormRegister = () => {
   const name = useForm();
   const email = useForm('email');
   const phone = useForm('phone');
   const password = useForm();
-
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  const { error, loading, request } = useFetch();
+  const { userLogin } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
-    try {
-      setLoading(true);
+
+    if (email.validate() && phone.validate()) {
       const { url, options } = USER_POST({
         name: name.value,
         email: email.value,
         phone: phone.value,
         password: password.value,
       });
-      const response = await fetch(url, options);
-      console.log(response);
-      const json = await response.json();
-      console.log(json);
-      if (!response.ok) throw new Error(json.message);
-      setData(json);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
+      const { response } = await request(url, options);
+      if (response.ok) userLogin(email.value, password.value);
     }
   }
 
@@ -46,7 +39,12 @@ const FormRegister = () => {
         <Input label="E-mail" type="email" name="email" {...email} />
         <Input label="Telefone" type="text" name="phone" {...phone} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Cadastrar</Button>
+        {loading ? (
+          <Button disabled>Cadastrando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
+        {error && <Error error={error} />}
       </form>
     </section>
   );
