@@ -1,7 +1,89 @@
 import React from 'react';
+import Input from '../FormComponents/Input';
+import Button from '../FormComponents/Button';
+import { UserContext } from '../../UserContext';
+import useForm from '../../Hooks/useForm';
+import useFetch from '../../Hooks/useFetch';
+import { USER_PUT } from '../../api';
+import Error from '../Error';
+import { ReactComponent as Check } from '../../Assets/check.svg';
 
 const UserDataEdit = () => {
-  return <div>UserDataEdit</div>;
+  const { data, getUser } = React.useContext(UserContext);
+  const name = useForm();
+  const email = useForm('email');
+  const phone = useForm('phone');
+  const password = useForm();
+  const { loading, error, request } = useFetch();
+  const [feedback, setFeedback] = React.useState(false);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const token = window.localStorage.getItem('token');
+    if (data && token) {
+      const { url, options } = USER_PUT(
+        {
+          name: name.value ? name.value : data.display_name,
+          email: email.value ? email.value : data.email,
+          phone: phone.value ? phone.value : data.phone,
+          password: password.value,
+        },
+        token,
+      );
+      const { response } = await request(url, options);
+      if (response.ok) {
+        await getUser(token);
+        name.resetValue();
+        email.resetValue();
+        phone.resetValue();
+        password.resetValue();
+        setFeedback(true);
+        setTimeout(() => {
+          setFeedback(false);
+        }, 3000);
+      }
+    }
+  }
+
+  if (!data) return null;
+  return (
+    <section>
+      <form onSubmit={handleSubmit}>
+        <Input type="text" label={data.display_name} name="name" {...name} />
+        <Input type="email" label={data.email} name="email" {...email} />
+        <Input type="text" label={data.phone} name="phone" {...phone} />
+        <Input type="password" label="Senha" name="password" {...password} />
+        {loading ? (
+          <Button disabled style={{ marginTop: '1.7rem' }}>
+            Salvar
+          </Button>
+        ) : (
+          <Button style={{ marginTop: '1.7rem' }}>Salvar</Button>
+        )}
+        <Error error={error} />
+        {feedback && (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.4rem',
+              margin: '2rem 0',
+            }}
+          >
+            <Check />
+            <p
+              style={{
+                color: 'var(--green)',
+                fontSize: '1.2rem',
+              }}
+            >
+              Dados atualizados com sucesso!
+            </p>
+          </div>
+        )}
+      </form>
+    </section>
+  );
 };
 
 export default UserDataEdit;

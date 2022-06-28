@@ -50,6 +50,20 @@ export function USER_GET(token) {
   };
 }
 
+export function USER_PUT(body, token) {
+  return {
+    url: API_URL + '/api/user',
+    options: {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
 export function PET_POST(formData, token) {
   return {
     url: API_URL + '/api/pet',
