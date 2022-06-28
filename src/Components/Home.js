@@ -1,5 +1,6 @@
 import React from 'react';
 import { UserContext } from '../UserContext';
+import Feed from './Feed/Feed';
 import Main from './Main';
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
   return (
     <section>
       {!login && <Main />}
-      Feed
+      <Feed status="lost" />
     </section>
   );
 };

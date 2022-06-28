@@ -1,0 +1,96 @@
+.pets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .pets {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+}
+
+.pet {
+  display: grid;
+  cursor: pointer;
+  position: relative;
+}
+
+.pet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 2rem;
+}
+
+.pet:hover::before {
+  display: block;
+}
+
+.pet img {
+  grid-area: 1 / 1;
+  border-radius: 2rem;
+  box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.petInfo {
+  grid-area: 1 / 1;
+  align-self: end;
+  justify-self: start;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 1.8rem;
+}
+
+.petInfo h2 {
+  color: var(--light-brown);
+  font-size: 1.2rem;
+}
+
+.petInfoFlex {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .petInfoFlex {
+    gap: 1rem;
+  }
+}
+
+.petInfoFlex p {
+  color: var(--light-brown);
+}
+
+@media screen and (max-width: 480px) {
+  .petInfo {
+    margin: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1.3rem;
+    gap: 0.2rem;
+  }
+  .petInfo h2 {
+    font-size: 1rem;
+  }
+  .petInfoFlex p {
+    font-size: 0.775rem
+  }
+  .pet img {
+    border-radius: 1rem;
+  }
+  .pet::before {
+    border-radius: 1rem;
+  }
+}
