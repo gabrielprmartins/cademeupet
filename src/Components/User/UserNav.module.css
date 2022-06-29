@@ -23,6 +23,16 @@
   transition: 0.1s;
 }
 
+.navLink span {
+  color: var(--brown);
+}
+
+.navLink:hover span,
+.navLink:focus span,
+.navLink:global(.active) span {
+  color: var(--white);
+}
+
 .navLink svg > * {
   fill: var(--light-brown);
 }
@@ -44,3 +54,23 @@
   color: var(--white);
 }
 
+@media screen and (max-width: 1000px) {
+  .navContainer {
+    overflow-y: auto;
+    padding: 1rem 0;
+  }
+  .navList {
+    flex-direction: row;
+  }
+  .navLink  {
+    white-space: nowrap;
+  }
+  .navLink span {
+    display: none;
+  }
+}
+
+.navTitle {
+  padding: 0 1.25rem;
+  margin-bottom: 1rem;
+}

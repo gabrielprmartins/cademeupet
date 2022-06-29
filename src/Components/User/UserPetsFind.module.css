@@ -45,3 +45,9 @@
   height: 0;
   padding-bottom: 100%;
 }
+
+@media screen and (max-width: 550px) {
+  .selects {
+    flex-wrap: wrap;
+  }
+}

@@ -47,42 +47,40 @@ const UserDataEdit = () => {
 
   if (!data) return null;
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <Input type="text" label={data.display_name} name="name" {...name} />
-        <Input type="email" label={data.email} name="email" {...email} />
-        <Input type="text" label={data.phone} name="phone" {...phone} />
-        <Input type="password" label="Senha" name="password" {...password} />
-        {loading ? (
-          <Button disabled style={{ marginTop: '1.7rem' }}>
-            Salvar
-          </Button>
-        ) : (
-          <Button style={{ marginTop: '1.7rem' }}>Salvar</Button>
-        )}
-        <Error error={error} />
-        {feedback && (
-          <div
+    <form onSubmit={handleSubmit}>
+      <Input type="text" label={data.display_name} name="name" {...name} />
+      <Input type="email" label={data.email} name="email" {...email} />
+      <Input type="text" label={data.phone} name="phone" {...phone} />
+      <Input type="password" label="Senha" name="password" {...password} />
+      {loading ? (
+        <Button disabled style={{ marginTop: '1.7rem' }}>
+          Salvar
+        </Button>
+      ) : (
+        <Button style={{ marginTop: '1.7rem' }}>Salvar</Button>
+      )}
+      <Error error={error} />
+      {feedback && (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1.4rem',
+            margin: '2rem 0',
+          }}
+        >
+          <Check />
+          <p
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1.4rem',
-              margin: '2rem 0',
+              color: 'var(--green)',
+              fontSize: '1.2rem',
             }}
           >
-            <Check />
-            <p
-              style={{
-                color: 'var(--green)',
-                fontSize: '1.2rem',
-              }}
-            >
-              Dados atualizados com sucesso!
-            </p>
-          </div>
-        )}
-      </form>
-    </section>
+            Dados atualizados com sucesso!
+          </p>
+        </div>
+      )}
+    </form>
   );
 };
 

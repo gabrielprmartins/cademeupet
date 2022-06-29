@@ -28,3 +28,9 @@
   background-color: var(--white);
   cursor: pointer;
 }
+
+@media screen and (max-width: 550px) {
+  .select {
+    width: 8rem;
+  }
+}
