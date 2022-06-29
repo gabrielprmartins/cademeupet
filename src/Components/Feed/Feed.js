@@ -1,35 +1,48 @@
 import React from 'react';
-import { PETS_GET } from '../../api';
-import useFetch from '../../Hooks/useFetch';
-import Loading from '../Loading';
 import FeedPets from './FeedPets';
-import Error from '../Error';
 import styles from './Feed.module.css';
 
 const Feed = ({ user, status }) => {
-  const [pets, setPets] = React.useState(null);
-  const { error, loading, request } = useFetch();
+  const [pages, setPages] = React.useState([1]);
+  const [infinite, setInfinite] = React.useState(true);
 
   React.useEffect(() => {
-    async function fetchPets() {
-      const { url, options } = PETS_GET({ page: 1, total: 10, user: user });
-      const { json } = await request(url, options);
-      if (json) {
-        setPets(json.filter((pet) => pet.status === status));
+    let wait = false;
+    function infiniteScroll() {
+      if (infinite) {
+        const scroll = window.scrollY;
+        const height = document.body.offsetHeight - window.innerHeight;
+        if (scroll > height * 0.9 && !wait) {
+          setPages((pages) => [...pages, pages.length + 1]);
+          wait = true;
+          setTimeout(() => {
+            wait = false;
+          }, 1000);
+        }
       }
     }
-    fetchPets();
-  }, [request, user, status]);
 
-  if (error) return <Error error={error} />;
-  if (loading) return <Loading />;
-  if (pets && pets.length)
-    return (
-      <section className={`${styles.feed} container`}>
-        <FeedPets data={pets} />
-      </section>
-    );
-  else return <p>Nenhum pet encontrado.</p>;
+    window.addEventListener('scroll', infiniteScroll);
+    window.addEventListener('wheel', infiniteScroll);
+    return () => {
+      window.removeEventListener('scroll', infiniteScroll);
+      window.removeEventListener('wheel', infiniteScroll);
+    };
+  }, [infinite]);
+
+  return (
+    <section className={`${styles.feed} container`}>
+      {pages.map((page) => (
+        <FeedPets
+          key={page}
+          user={user}
+          status={status}
+          page={page}
+          setInfinite={setInfinite}
+        />
+      ))}
+    </section>
+  );
 };
 
 Feed.defaultProps = {

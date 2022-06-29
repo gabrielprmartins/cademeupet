@@ -1,0 +1,29 @@
+.footer {
+  padding: 3rem 1.25rem;
+  background-color: var(--yellow);
+}
+
+.footerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footerInfo h2 {
+  font-size: 2rem;
+
+}
+
+.footerInfo p {
+  color: var(--brown);
+}
+
+@media screen and (max-width: 380px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+  .footerContainer {
+    flex-direction: column;
+  }
+}

@@ -36,8 +36,15 @@ img {
   padding: 0 1.25px;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
 .mainContainer {
-  margin-top: 7rem;
+  margin-top: 8rem;
+  flex: 1;
 }
 
 .title {
