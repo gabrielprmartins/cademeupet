@@ -113,6 +113,18 @@ export function PET_DELETE(id, token) {
   };
 }
 
+export function PET_STATUS_PUT(id, token) {
+  return {
+    url: `${API_URL}/api/pet/status/${id}`,
+    options: {
+      method: 'PUT',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    },
+  };
+}
+
 export function UFS_GET() {
   return {
     url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/',

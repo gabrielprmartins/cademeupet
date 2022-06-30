@@ -141,3 +141,33 @@
     font-size: 1rem;
   }
 }
+
+.userOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 10rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .userOptions {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .userOptions {
+    max-width: 100%;
+  }
+}
+
+.foundPet {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  color: var(--green);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

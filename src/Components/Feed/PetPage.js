@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import { PET_GET } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 import ButtonDeletePet from '../ButtonDeletePet';
+import ButtonFoundPet from '../ButtonFoundPet';
 import Error from '../Error';
 import Loading from '../Loading';
 import { UserContext } from '../../UserContext';
 import styles from './PetPage.module.css';
 import { ReactComponent as Globe } from '../../Assets/globe.svg';
 import { ReactComponent as Phone } from '../../Assets/phone.svg';
+import { ReactComponent as Check } from '../../Assets/check.svg';
 import useRegion from '../../Hooks/useRegion';
 
 const PetPage = () => {
@@ -34,8 +36,20 @@ const PetPage = () => {
           <img src={data.src} alt={data.title} />
         </figure>
         <div className={styles.petInfo}>
-          {user.data && user.data.email === data.author_email ? (
-            <ButtonDeletePet id={id} />
+          {user.data &&
+          user.data.email === data.author_email &&
+          data.status === 'lost' ? (
+            <div className={styles.userOptions}>
+              <ButtonFoundPet id={id} />
+              <ButtonDeletePet id={id} />
+            </div>
+          ) : (
+            ''
+          )}
+          {data.status === 'found' ? (
+            <p className={styles.foundPet}>
+              <Check /> Pet já encontrado!
+            </p>
           ) : (
             ''
           )}
