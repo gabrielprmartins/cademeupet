@@ -77,6 +77,18 @@ export function PET_POST(formData, token) {
   };
 }
 
+export function PET_GET(id) {
+  return {
+    url: `${API_URL}/api/pet/${id}`,
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}
+
 export function PETS_GET({ page, total, user }) {
   return {
     url: `${API_URL}/api/pet/?_page=${page}&_total=${total}&_user=${user}`,
@@ -84,6 +96,18 @@ export function PETS_GET({ page, total, user }) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+      },
+    },
+  };
+}
+
+export function PET_DELETE(id, token) {
+  return {
+    url: `${API_URL}/api/pet/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token,
       },
     },
   };

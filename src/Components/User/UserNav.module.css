@@ -54,7 +54,7 @@
   color: var(--white);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .navContainer {
     overflow-y: auto;
     padding: 1rem 0;
@@ -68,9 +68,11 @@
   .navLink span {
     display: none;
   }
+  .logout {
+    transform: rotate(180deg);
+  }
 }
 
 .navTitle {
-  padding: 0 1.25rem;
   margin-bottom: 1rem;
 }

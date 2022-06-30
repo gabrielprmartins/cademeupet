@@ -15,7 +15,7 @@ const UserNav = () => {
   const { userLogout } = React.useContext(UserContext);
   const [title, setTitle] = React.useState('');
   const location = useLocation();
-  const mobile = useMedia('(max-width: 1000px)');
+  const mobile = useMedia('(max-width: 1200px)');
 
   React.useEffect(() => {
     const { pathname } = location;
@@ -55,7 +55,7 @@ const UserNav = () => {
             <span>Editar dados</span>
           </NavLink>
           <button className={styles.navLink} onClick={userLogout}>
-            <Logout />
+            <Logout className={styles.logout} />
             <span>Sair</span>
           </button>
         </nav>

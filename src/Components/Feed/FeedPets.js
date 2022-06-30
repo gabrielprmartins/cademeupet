@@ -34,7 +34,7 @@ const FeedPets = ({ page, setInfinite, user, status }) => {
       <div className={styles.pets}>
         {pets &&
           pets.map((pet) => (
-            <Link to={`pet/${pet.id}`} key={pet.id} className={styles.pet}>
+            <Link to={`/pet/${pet.id}`} key={pet.id} className={styles.pet}>
               <img src={pet.src} alt={pet.title} />
               <article className={styles.petInfo}>
                 <h2>{pet.title}</h2>
