@@ -9,12 +9,13 @@ import { UserContext } from '../../UserContext';
 import styles from './PetPage.module.css';
 import { ReactComponent as Globe } from '../../Assets/globe.svg';
 import { ReactComponent as Phone } from '../../Assets/phone.svg';
+import useRegion from '../../Hooks/useRegion';
 
 const PetPage = () => {
   const { id } = useParams();
   const { data, loading, error, request } = useFetch();
   const user = React.useContext(UserContext);
-  console.log(user);
+  const { getStateName } = useRegion();
 
   React.useEffect(() => {
     function fetchPet(id) {
@@ -33,7 +34,7 @@ const PetPage = () => {
           <img src={data.src} alt={data.title} />
         </figure>
         <div className={styles.petInfo}>
-          {user.data.email === data.author_email ? (
+          {user.data && user.data.email === data.author_email ? (
             <ButtonDeletePet id={id} />
           ) : (
             ''
@@ -48,9 +49,11 @@ const PetPage = () => {
               .replace(',', '/')}
           </span>
           <h1 className="title">{data.title}</h1>
-          <p className={styles.region}>
-            <Globe /> {data.region}
-          </p>
+          {getStateName && (
+            <p className={styles.region}>
+              <Globe /> {getStateName(data.region)}
+            </p>
+          )}
           <ul className={styles.petInfoList}>
             <li>
               <strong>{data.sex}</strong>

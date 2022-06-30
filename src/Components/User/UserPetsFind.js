@@ -4,8 +4,9 @@ import Button from '../FormComponents/Button';
 import styles from './UserPetsFind.module.css';
 import Select from '../FormComponents/Select';
 import useForm from '../../Hooks/useForm';
-import { PET_POST, UFS_GET } from '../../api';
+import { PET_POST } from '../../api';
 import useFetch from '../../Hooks/useFetch';
+import useRegion from '../../Hooks/useRegion';
 import Error from '../Error';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,23 +24,11 @@ const UserPetsFind = () => {
   const [img, setImg] = React.useState({});
   const navigate = useNavigate();
   const { data, error, loading, request } = useFetch();
-  const [ufs, setUfs] = React.useState([]);
+  const { ufs } = useRegion();
 
   React.useEffect(() => {
     if (data) navigate('/conta');
   }, [data, navigate]);
-
-  React.useEffect(() => {
-    async function fetchRegions() {
-      const { url, options } = UFS_GET();
-      const response = await fetch(url, options);
-      const json = await response.json();
-      if (response.ok && json.length) {
-        setUfs(json.map((region) => region.sigla));
-      }
-    }
-    fetchRegions();
-  }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -70,7 +59,11 @@ const UserPetsFind = () => {
         <div className={styles.selects}>
           <Select label="Espécie" options={options.specie} {...specie} />
           <Select label="Sexo" options={options.sex} {...sex} />
-          <Select label="Região" options={ufs} {...region} />
+          <Select
+            label="Região"
+            options={ufs ? ufs : ['Carregando...']}
+            {...region}
+          />
         </div>
         <Input type="textarea" label="Comentário" name="comment" {...comment} />
         <label htmlFor="photo" className={styles.labelFile}>
