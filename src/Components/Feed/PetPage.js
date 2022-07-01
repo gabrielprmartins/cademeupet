@@ -4,14 +4,19 @@ import { PET_GET } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 import ButtonDeletePet from '../ButtonDeletePet';
 import ButtonFoundPet from '../ButtonFoundPet';
-import Error from '../Error';
-import Loading from '../Loading';
+import Error from '../Helpers/Error';
+import Loading from '../Helpers/Loading';
 import { UserContext } from '../../UserContext';
 import styles from './PetPage.module.css';
 import { ReactComponent as Globe } from '../../Assets/globe.svg';
 import { ReactComponent as Phone } from '../../Assets/phone.svg';
 import { ReactComponent as Check } from '../../Assets/check.svg';
 import useRegion from '../../Hooks/useRegion';
+
+// Protected Routes
+// Image Skeleton
+// Loading
+// Feed com filtro
 
 const PetPage = () => {
   const { id } = useParams();

@@ -5,7 +5,7 @@ import useForm from '../../Hooks/useForm';
 import Button from '../FormComponents/Button';
 import Input from '../FormComponents/Input';
 import { UserContext } from '../../UserContext';
-import Error from '../Error';
+import Error from '../Helpers/Error';
 
 const FormLogin = () => {
   const navigate = useNavigate();

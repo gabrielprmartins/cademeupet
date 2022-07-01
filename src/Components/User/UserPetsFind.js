@@ -7,7 +7,7 @@ import useForm from '../../Hooks/useForm';
 import { PET_POST } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 import useRegion from '../../Hooks/useRegion';
-import Error from '../Error';
+import Error from '../Helpers/Error';
 import { useNavigate } from 'react-router-dom';
 
 const options = {

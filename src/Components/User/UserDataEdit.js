@@ -5,7 +5,7 @@ import { UserContext } from '../../UserContext';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 import { USER_PUT } from '../../api';
-import Error from '../Error';
+import Error from '../Helpers/Error';
 import { ReactComponent as Check } from '../../Assets/check.svg';
 
 const UserDataEdit = () => {

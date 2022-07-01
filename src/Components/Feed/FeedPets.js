@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './FeedPets.module.css';
 import { Link } from 'react-router-dom';
-import Error from '../Error';
-import Loading from '../Loading';
+import Error from '../Helpers/Loading';
+import Loading from '../Helpers/Loading';
 import { PETS_GET } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 

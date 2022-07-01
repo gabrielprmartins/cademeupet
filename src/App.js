@@ -8,7 +8,8 @@ import Login from './Components/Login/Login';
 import { UserStorage } from './UserContext';
 import User from './Components/User/User';
 import PetPage from './Components/Feed/PetPage';
-import GoToTop from './Components/GoToTop';
+import GoToTop from './Components/Helpers/GoToTop';
+import ProtectedRoute from './Components/Helpers/ProtectedRoute';
 
 function App() {
   return (
@@ -20,7 +21,14 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="login/*" element={<Login />} />
-              <Route path="conta/*" element={<User />} />
+              <Route
+                path="conta/*"
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="pet/:id" element={<PetPage />} />
             </Routes>
           </main>

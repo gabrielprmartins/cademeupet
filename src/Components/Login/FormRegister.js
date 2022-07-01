@@ -6,7 +6,7 @@ import useForm from '../../Hooks/useForm';
 import { USER_POST } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 import { UserContext } from '../../UserContext';
-import Error from '../Error';
+import Error from '../Helpers/Error';
 
 const FormRegister = () => {
   const name = useForm();
