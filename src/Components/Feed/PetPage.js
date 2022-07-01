@@ -13,11 +13,6 @@ import { ReactComponent as Phone } from '../../Assets/phone.svg';
 import { ReactComponent as Check } from '../../Assets/check.svg';
 import useRegion from '../../Hooks/useRegion';
 
-// Protected Routes
-// Image Skeleton
-// Loading
-// Feed com filtro
-
 const PetPage = () => {
   const { id } = useParams();
   const { data, loading, error, request } = useFetch();

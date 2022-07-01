@@ -35,7 +35,8 @@
   display: block;
 }
 
-.pet img {
+.pet > div {
+  overflow: hidden;
   grid-area: 1 / 1;
   border-radius: 2rem;
   box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.10);
@@ -88,7 +89,7 @@
   .petInfoFlex p {
     font-size: 0.775rem
   }
-  .pet img {
+  .pet > div {
     border-radius: 1rem;
   }
   .pet::before {

@@ -5,6 +5,7 @@ import Error from '../Helpers/Loading';
 import Loading from '../Helpers/Loading';
 import { PETS_GET } from '../../api';
 import useFetch from '../../Hooks/useFetch';
+import Image from '../Helpers/Image';
 
 const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
   const { data, error, loading, request } = useFetch();
@@ -38,7 +39,7 @@ const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
         {data &&
           data.map((pet) => (
             <Link to={`/pet/${pet.id}`} key={pet.id} className={styles.pet}>
-              <img src={pet.src} alt={pet.title} />
+              <Image src={pet.src} alt={pet.title} />
               <article className={styles.petInfo}>
                 <h2>{pet.title}</h2>
                 <div className={styles.petInfoFlex}>
