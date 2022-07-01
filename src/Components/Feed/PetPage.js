@@ -63,7 +63,7 @@ const PetPage = () => {
               .replace(',', '/')}
           </span>
           <h1 className="title">{data.title}</h1>
-          {getStateName && (
+          {getStateName(data.region) && (
             <p className={styles.region}>
               <Globe /> {getStateName(data.region)}
             </p>

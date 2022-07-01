@@ -6,34 +6,37 @@ import Loading from '../Loading';
 import { PETS_GET } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 
-const FeedPets = ({ page, setInfinite, user, status }) => {
-  const [pets, setPets] = React.useState(null);
-
-  const { error, loading, request } = useFetch();
+const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
+  const { data, error, loading, request } = useFetch();
 
   React.useEffect(() => {
     async function fetchPets() {
       const total = 6;
-      const { url, options } = PETS_GET({ page, total, user });
+      const { url, options } = PETS_GET({
+        page,
+        total,
+        user,
+        status,
+        specie,
+        region,
+      });
       const { json, response } = await request(url, options);
       if (response && response.ok) {
-        const petsFilter = json.filter((pet) => pet.status === status);
-        setPets(petsFilter);
-        if (petsFilter.length < total) {
+        if (json.length < total) {
           setInfinite(false);
         }
       }
     }
     fetchPets();
-  }, [request, user, status, page, setInfinite]);
+  }, [request, user, status, page, setInfinite, specie, region]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;
-  if (pets && pets.length)
+  if (data && data.length)
     return (
       <div className={styles.pets}>
-        {pets &&
-          pets.map((pet) => (
+        {data &&
+          data.map((pet) => (
             <Link to={`/pet/${pet.id}`} key={pet.id} className={styles.pet}>
               <img src={pet.src} alt={pet.title} />
               <article className={styles.petInfo}>

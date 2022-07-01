@@ -89,9 +89,9 @@ export function PET_GET(id) {
   };
 }
 
-export function PETS_GET({ page, total, user }) {
+export function PETS_GET({ page, total, user, status, specie, region }) {
   return {
-    url: `${API_URL}/api/pet/?_page=${page}&_total=${total}&_user=${user}`,
+    url: `${API_URL}/api/pet/?_page=${page}&_total=${total}&_user=${user}&_status=${status}&_specie=${specie}&_region=${region}`,
     options: {
       method: 'GET',
       headers: {

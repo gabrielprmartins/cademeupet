@@ -2,7 +2,7 @@ import React from 'react';
 import FeedPets from './FeedPets';
 import styles from './Feed.module.css';
 
-const Feed = ({ user, status }) => {
+const Feed = ({ user, status, specie, region }) => {
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
 
@@ -38,6 +38,8 @@ const Feed = ({ user, status }) => {
           user={user}
           status={status}
           page={page}
+          specie={specie}
+          region={region}
           setInfinite={setInfinite}
         />
       ))}
@@ -47,6 +49,8 @@ const Feed = ({ user, status }) => {
 
 Feed.defaultProps = {
   user: 0,
+  specie: '',
+  region: '',
 };
 
 export default Feed;

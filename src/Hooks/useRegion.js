@@ -48,7 +48,7 @@ const useRegion = () => {
         }
       });
     }
-    return `${ufName} - ${ufInitial}`;
+    if (ufName && ufInitial) return `${ufName} - ${ufInitial}`;
   }
 
   return { ufs, ufsWithId, namesWithId, getStateName, response };
