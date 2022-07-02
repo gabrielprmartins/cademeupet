@@ -20,7 +20,7 @@
 .select:focus,
 .select:hover,
 .select:active,
-.select.active {
+.select:global(.active) {
   background-color: var(--white);
 }
 
