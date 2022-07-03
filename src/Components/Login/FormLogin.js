@@ -6,6 +6,7 @@ import Button from '../FormComponents/Button';
 import Input from '../FormComponents/Input';
 import { UserContext } from '../../UserContext';
 import Error from '../Helpers/Error';
+import Head from '../Helpers/Head';
 
 const FormLogin = () => {
   const navigate = useNavigate();
@@ -24,6 +25,11 @@ const FormLogin = () => {
 
   return (
     <section className={styles.formLogin}>
+      <Head
+        title="Cadê meu pet? | Login"
+        description="Faça login e procure por seu pet"
+      />
+
       <h1 className="title">Login</h1>
       <form onSubmit={handleSubmit}>
         <Input label="E-mail" type="email" name="email" {...username} />

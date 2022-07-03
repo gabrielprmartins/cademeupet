@@ -7,6 +7,7 @@ import { USER_POST } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 import { UserContext } from '../../UserContext';
 import Error from '../Helpers/Error';
+import Head from '../Helpers/Head';
 
 const FormRegister = () => {
   const name = useForm();
@@ -33,6 +34,11 @@ const FormRegister = () => {
 
   return (
     <section className={styles.formLogin}>
+      <Head
+        title="Cadê meu pet? | Cadastro"
+        description="Faça um cadastro e poste seu pet para que alguém o encontre na sua região rapidamente."
+      />
+
       <h1 className="title">Cadastro</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Nome Completo" type="text" name="name" {...name} />

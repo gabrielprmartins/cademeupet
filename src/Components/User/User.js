@@ -7,6 +7,7 @@ import UserNav from './UserNav';
 import UserPetsFind from './UserPetsFind';
 import UserDataEdit from './UserDataEdit';
 import { UserContext } from '../../UserContext';
+import Head from '../Helpers/Head';
 
 const User = () => {
   const { data } = React.useContext(UserContext);
@@ -14,6 +15,11 @@ const User = () => {
   if (data)
     return (
       <section className={`${styles.user} container`}>
+        <Head
+          title="Cadê meu pet? | Minha conta"
+          description="Dados do usuário"
+        />
+
         <UserNav />
         <Routes>
           <Route path="/" element={<Feed user={data.id} status="lost" />} />

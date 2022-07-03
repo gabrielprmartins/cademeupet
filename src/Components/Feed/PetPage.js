@@ -12,6 +12,7 @@ import { ReactComponent as Globe } from '../../Assets/globe.svg';
 import { ReactComponent as Phone } from '../../Assets/phone.svg';
 import { ReactComponent as Check } from '../../Assets/check.svg';
 import useRegion from '../../Hooks/useRegion';
+import Head from '../Helpers/Head';
 
 const PetPage = () => {
   const { id } = useParams();
@@ -32,6 +33,13 @@ const PetPage = () => {
   if (data)
     return (
       <section className={`${styles.petContainer} container`}>
+        <Head
+          title={`Cadê ${data.sex === 'Macho' ? 'meu' : 'minha'} ${
+            data.title
+          }?`}
+          description=""
+        />
+
         <figure className={styles.petImg}>
           <img src={data.src} alt={data.title} />
         </figure>

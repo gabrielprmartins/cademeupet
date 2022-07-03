@@ -2,6 +2,7 @@ import React from 'react';
 import { UserContext } from '../UserContext';
 import Feed from './Feed/Feed';
 import FeedFilter from './Feed/FeedFilter';
+import Head from './Helpers/Head';
 import Main from './Main';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
 
   return (
     <section>
+      <Head description="Poste seu pet para que alguém o encontre na sua região rapidamente." />
       {!login && <Main />}
       <FeedFilter
         specie={specie}

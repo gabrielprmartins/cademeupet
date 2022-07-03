@@ -11,6 +11,7 @@ const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
   const { data, error, loading, request } = useFetch();
 
   React.useEffect(() => {
+    setInfinite(false);
     async function fetchPets() {
       const total = 6;
       const { url, options } = PETS_GET({
@@ -23,6 +24,7 @@ const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
       });
       const { json, response } = await request(url, options);
       if (response && response.ok) {
+        setInfinite(true);
         if (json.length < total) {
           setInfinite(false);
         }

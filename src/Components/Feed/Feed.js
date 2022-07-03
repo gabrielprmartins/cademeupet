@@ -7,6 +7,10 @@ const Feed = ({ user, status, specie, region }) => {
   const [infinite, setInfinite] = React.useState(true);
 
   React.useEffect(() => {
+    setPages([1]);
+  }, [specie, region]);
+
+  React.useEffect(() => {
     let wait = false;
     function infiniteScroll() {
       if (infinite) {
