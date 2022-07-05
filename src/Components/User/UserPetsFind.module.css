@@ -46,6 +46,12 @@
   padding-bottom: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  .find {
+    justify-self: center;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .selects {
     flex-wrap: wrap;

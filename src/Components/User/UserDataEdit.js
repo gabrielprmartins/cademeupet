@@ -7,6 +7,7 @@ import useFetch from '../../Hooks/useFetch';
 import { USER_PUT } from '../../api';
 import Error from '../Helpers/Error';
 import { ReactComponent as Check } from '../../Assets/check.svg';
+import styles from './UserDataEdit.module.css';
 
 const UserDataEdit = () => {
   const { data, getUser } = React.useContext(UserContext);
@@ -47,7 +48,7 @@ const UserDataEdit = () => {
 
   if (!data) return null;
   return (
-    <form onSubmit={handleSubmit} className="animeRight">
+    <form onSubmit={handleSubmit} className={`${styles.form} animeRight`}>
       <Input type="text" label={data.display_name} name="name" {...name} />
       <Input type="email" label={data.email} name="email" {...email} />
       <Input type="text" label={data.phone} name="phone" {...phone} />

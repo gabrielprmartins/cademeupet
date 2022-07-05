@@ -1,5 +1,5 @@
 .wrapper {
-  height: 20vh;
+  margin: 4rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,5 +10,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
 }
