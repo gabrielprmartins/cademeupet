@@ -33,7 +33,7 @@ const FormRegister = () => {
   }
 
   return (
-    <section className={styles.formLogin}>
+    <section className={`${styles.formLogin} animeRight`}>
       <Head
         title="Cadê meu pet? | Cadastro"
         description="Faça um cadastro e poste seu pet para que alguém o encontre na sua região rapidamente."

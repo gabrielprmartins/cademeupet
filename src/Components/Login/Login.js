@@ -7,7 +7,7 @@ import styles from './Login.module.css';
 
 const Login = () => {
   return (
-    <section className={styles.login}>
+    <section className={`${styles.login} animeRight`}>
       <Head
         title="Cadê meu pet? | Login"
         description="Faça login e procure por seu pet"

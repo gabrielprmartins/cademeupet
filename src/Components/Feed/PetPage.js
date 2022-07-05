@@ -32,7 +32,7 @@ const PetPage = () => {
   if (loading) return <Loading />;
   if (data)
     return (
-      <section className={`${styles.petContainer} container`}>
+      <section className={`${styles.petContainer} container animeRight`}>
         <Head
           title={`Cadê ${data.sex === 'Macho' ? 'meu' : 'minha'} ${
             data.title

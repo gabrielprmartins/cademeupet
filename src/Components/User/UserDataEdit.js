@@ -47,7 +47,7 @@ const UserDataEdit = () => {
 
   if (!data) return null;
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="animeRight">
       <Input type="text" label={data.display_name} name="name" {...name} />
       <Input type="email" label={data.email} name="email" {...email} />
       <Input type="text" label={data.phone} name="phone" {...phone} />

@@ -37,7 +37,7 @@ const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
   if (loading) return <Loading />;
   if (data && data.length)
     return (
-      <div className={styles.pets}>
+      <div className={`${styles.pets} animeRight`}>
         {data &&
           data.map((pet) => (
             <Link to={`/pet/${pet.id}`} key={pet.id} className={styles.pet}>

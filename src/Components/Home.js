@@ -11,7 +11,7 @@ const Home = () => {
   const [region, setRegion] = React.useState('');
 
   return (
-    <section>
+    <section className="animeRight">
       <Head description="Poste seu pet para que alguém o encontre na sua região rapidamente." />
       {!login && <Main />}
       <FeedFilter

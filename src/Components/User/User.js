@@ -14,7 +14,7 @@ const User = () => {
 
   if (data)
     return (
-      <section className={`${styles.user} container`}>
+      <section className={`${styles.user} container animeRight`}>
         <Head
           title="Cadê meu pet? | Minha conta"
           description="Dados do usuário"

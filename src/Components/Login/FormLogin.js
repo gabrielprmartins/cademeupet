@@ -24,7 +24,7 @@ const FormLogin = () => {
   }
 
   return (
-    <section className={styles.formLogin}>
+    <section className={`${styles.formLogin} animeRight`}>
       <Head
         title="Cadê meu pet? | Login"
         description="Faça login e procure por seu pet"

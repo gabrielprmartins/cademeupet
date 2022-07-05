@@ -53,7 +53,7 @@ const UserPetsFind = () => {
   }
 
   return (
-    <section className={styles.find}>
+    <section className={`${styles.find} animeRight`}>
       <form onSubmit={handleSubmit}>
         <Input type="text" label="Nome" name="name" {...name} />
         <div className={styles.selects}>
