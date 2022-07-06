@@ -20,11 +20,18 @@ const FeedFilter = ({ specie, setSpecie, region, setRegion }) => {
       {ufs && (
         <div className={styles.region}>
           <h2 className={styles.filterTitle}>Região</h2>
-          <Select
-            options={['Todas', ...ufs]}
+          <select
             value={region}
             onChange={({ target }) => setRegion(target.value)}
-          />
+          >
+            <option value="">Todas</option>
+            {ufs &&
+              ufs.map((option) => (
+                <option value={option} key={option}>
+                  {option}
+                </option>
+              ))}
+          </select>
         </div>
       )}
     </div>

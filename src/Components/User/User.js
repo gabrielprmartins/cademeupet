@@ -8,6 +8,7 @@ import UserPetsFind from './UserPetsFind';
 import UserDataEdit from './UserDataEdit';
 import { UserContext } from '../../UserContext';
 import Head from '../Helpers/Head';
+import NotFound from '../NotFound';
 
 const User = () => {
   const { data } = React.useContext(UserContext);
@@ -29,6 +30,7 @@ const User = () => {
           />
           <Route path="procurar" element={<UserPetsFind />} />
           <Route path="editar" element={<UserDataEdit />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </section>
     );

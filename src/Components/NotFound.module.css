@@ -1,0 +1,17 @@
+.notFound {
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.notFound h1 {
+  text-align: center;
+}
+
+.notFound a {
+  display: inline-block;
+}

@@ -13,7 +13,7 @@ const Select = ({ options, label, value, onChange }) => {
       </option>
       {options &&
         options.map((option) => (
-          <option value={option === 'Todas' ? '' : option} key={option}>
+          <option value={option} key={option}>
             {option}
           </option>
         ))}

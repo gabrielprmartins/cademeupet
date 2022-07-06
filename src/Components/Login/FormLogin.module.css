@@ -2,6 +2,10 @@
   padding: 4rem;
 }
 
+.formLogin h1 {
+  margin-bottom: 0.8rem;
+}
+
 .formLogin > button {
   margin-top: 1rem;
 }

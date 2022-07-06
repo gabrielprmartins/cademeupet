@@ -1,7 +1,7 @@
 .user {
   max-width: 60rem;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(20rem, auto) 1fr;
   justify-content: center;
   gap: 3rem;
   padding: 0 1.25rem;

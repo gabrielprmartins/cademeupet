@@ -10,6 +10,7 @@ import User from './Components/User/User';
 import PetPage from './Components/Feed/PetPage';
 import GoToTop from './Components/Helpers/GoToTop';
 import ProtectedRoute from './Components/Helpers/ProtectedRoute';
+import NotFound from './Components/NotFound';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 }
               />
               <Route path="pet/:id" element={<PetPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
