@@ -41,6 +41,9 @@
   top: -5px;
   left: -5px;
   animation: loading 1s infinite;
+  -webkit-animation: loading 1s infinite;
+  -moz-animation: loading 1s infinite;
+  -ms-animation: loading 1s infinite
 }
 
 .button:disabled::after {
@@ -51,5 +54,8 @@
 @keyframes loading {
   to {
     transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
   }
 }
