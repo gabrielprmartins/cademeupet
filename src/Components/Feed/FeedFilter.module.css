@@ -104,6 +104,10 @@
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
+  .specie label,
+  .region select {
+  box-shadow: 2px 4px 10px -2px rgba(0, 0, 0, 0.05);
+  }
   .region {
     grid-row: 1;
     grid-column: 1;

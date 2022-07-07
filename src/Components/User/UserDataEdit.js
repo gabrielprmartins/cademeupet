@@ -6,8 +6,8 @@ import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 import { USER_PUT } from '../../api';
 import Error from '../Helpers/Error';
-import { ReactComponent as Check } from '../../Assets/check.svg';
 import styles from './UserDataEdit.module.css';
+import Feedback from '../Helpers/Feedback';
 
 const UserDataEdit = () => {
   const { data, getUser } = React.useContext(UserContext);
@@ -61,26 +61,7 @@ const UserDataEdit = () => {
         <Button style={{ marginTop: '1.7rem' }}>Salvar</Button>
       )}
       <Error error={error} />
-      {feedback && (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1.4rem',
-            margin: '2rem 0',
-          }}
-        >
-          <Check />
-          <p
-            style={{
-              color: 'var(--green)',
-              fontSize: '1.2rem',
-            }}
-          >
-            Dados atualizados com sucesso!
-          </p>
-        </div>
-      )}
+      {feedback && <Feedback>Dados atualizados com sucesso!</Feedback>}
     </form>
   );
 };
