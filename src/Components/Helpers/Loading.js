@@ -25,7 +25,7 @@ const Loading = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={`${styles.loading} animeRight`}>
+      <div className={`${styles.loading}`}>
         <svg
           width="200"
           height="200"
