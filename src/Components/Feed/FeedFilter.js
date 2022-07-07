@@ -1,6 +1,5 @@
 import React from 'react';
 import Radio from '../FormComponents/Radio';
-import Select from '../FormComponents/Select';
 import styles from './FeedFilter.module.css';
 import useRegion from '../../Hooks/useRegion';
 

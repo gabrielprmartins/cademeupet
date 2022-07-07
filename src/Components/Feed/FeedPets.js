@@ -60,7 +60,7 @@ const FeedPets = ({ page, setInfinite, user, status, specie, region }) => {
           ))}
       </div>
     );
-  else return <p>Nenhum pet encontrado.</p>;
+  else return <p className={styles.notFoundPet}>Nenhum pet encontrado.</p>;
 };
 
 export default FeedPets;

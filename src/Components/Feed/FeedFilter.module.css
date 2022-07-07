@@ -58,8 +58,9 @@
 
 .region select {
   background: url('../../Assets/globe.svg') no-repeat 10% 50%, url('../../Assets/arrow-select.svg') no-repeat 90% 50%;
-  padding: 1rem;
-  width: 9rem;
+  padding: 1rem 2rem;
+  padding-left: 3rem;
+  width: 8rem;
   margin-top: 1rem;
   cursor: pointer;
   background-color: var(--beige);
@@ -94,11 +95,21 @@
 
 @media screen and (max-width: 730px) {
   .filter {
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    padding: 0 0 1.4rem 0;
+    margin: 0 1.25rem 1rem 1.25rem;
     overflow-y: auto;
-    padding-bottom: 2rem;
-    margin: 0 0 0 1.25rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .region {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .specie {
+    grid-column: 2;
   }
   .filterTitle {
     display: none;

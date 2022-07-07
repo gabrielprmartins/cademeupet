@@ -127,7 +127,7 @@ export function PET_STATUS_PUT(id, token) {
 
 export function UFS_GET() {
   return {
-    url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/',
+    url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome',
     options: {
       method: 'GET',
       headers: {
