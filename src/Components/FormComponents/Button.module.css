@@ -40,15 +40,15 @@
   z-index: 12;
   top: -5px;
   left: -5px;
-  animation: loading 1s infinite;
-  -webkit-animation: loading 1s infinite;
-  -moz-animation: loading 1s infinite;
-  -ms-animation: loading 1s infinite;
 }
 
 .button:disabled::after {
   opacity: 1;
   display: block;
+   animation: loading 1s infinite;
+  -webkit-animation: loading 1s infinite;
+  -moz-animation: loading 1s infinite;
+  -ms-animation: loading 1s infinite;
 }
 
 @keyframes loading {
