@@ -58,8 +58,7 @@
 
 .region select {
   background: url('../../Assets/globe.svg') no-repeat 10% 50%, url('../../Assets/arrow-select.svg') no-repeat 90% 50%;
-  padding: 1rem 0rem;
-  text-align: center;
+  padding: 1rem 0 1rem 1rem;
   width: 9rem;
   margin-top: 1rem;
   cursor: pointer;
@@ -103,5 +102,11 @@
   }
   .filterTitle {
     display: none;
+  }
+  .specie {
+    margin-top: 0rem;
+  }
+  .region select {
+    margin-top: 0rem;
   }
 }
