@@ -95,6 +95,8 @@
 
 @media screen and (max-width: 730px) {
   .filter {
+    flex-direction: row-reverse;
+    gap: 1rem;
     overflow-y: auto;
     padding-bottom: 2rem;
     margin-bottom: 0;
