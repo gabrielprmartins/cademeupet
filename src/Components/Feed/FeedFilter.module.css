@@ -101,4 +101,7 @@
     padding-bottom: 2rem;
     margin: 0 0 0 1.25rem;
   }
+  .filterTitle {
+    display: none;
+  }
 }
